@@ -22,7 +22,11 @@ function App() {
     error: ''
   })
   const [searchQuery, setSearchQuery] = useState('')
-  const [lyrics, setLyrics] = useState(null)
+  const [lyrics, setLyrics] = useState({
+    loading: false,
+    lyricData: [],
+    error: ''
+  })
   
 const getSong = async (e) => {
   e.preventDefault()
@@ -43,7 +47,8 @@ const getSong = async (e) => {
   } catch (err) {
     console.log(err.message)
     setSongs({
-      ...songs,
+      songData: [],
+      error: err.message,
       loading: false
     })
   }
@@ -51,12 +56,29 @@ const getSong = async (e) => {
 }
 
 const getSongLyric = async (id) => {
-  setLyrics(null)
-  const data = await fetch(`https://spotify23.p.rapidapi.com/track_lyrics/?id=${id}`, options)
-  const response = await data.json()
-  const responseData = await response
-  setLyrics(responseData)
-  console.log(lyrics)
+  setLyrics({
+    ...lyrics,
+    loading: true,
+  })
+  try {
+    const data = await fetch(`https://spotify23.p.rapidapi.com/track_lyrics/?id=${id}`, options)
+    const response = await data.json()
+    const responseData = await response
+    setLyrics({
+      error: '',
+      loading: false,
+      lyricData: responseData.lyrics.lines
+    })
+  }
+  catch (err) {
+    console.log(err.message)
+    setLyrics({
+      lyricData: [],
+      error: err.message,
+      loading: false
+    })
+  }
+ 
 }
 
   return (

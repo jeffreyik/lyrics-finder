@@ -25,7 +25,8 @@ const Home = () => {
 
                 <div className="card-container">
                     <ClipLoader color='#F7DE3E' loading={songs.loading} size={50} />
-                    { cards }
+                    {songs.error !== '' && <div>no internet connection</div>}
+                    { !songs.loading && cards }
                 </div>
             </header>
         </div>
