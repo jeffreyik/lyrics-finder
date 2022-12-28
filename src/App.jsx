@@ -30,6 +30,7 @@ function App() {
   
 const getSong = async (e) => {
   e.preventDefault()
+  setSearchQuery('')
   setSongs({
     ...songs,
     loading: true
