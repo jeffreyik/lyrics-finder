@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+  <g>
+    <path fill="rgb(247,222,62)" fill-rule="evenodd" d="M10 0h68c5.51915024 0 10 4.48084976 10 10v68c0 5.51915024-4.48084976 10-10 10H10C4.48084976 88 0 83.51915024 0 78V10C0 4.48084976 4.48084976 0 10 0z"/>
+    <text font-size="0" style="white-space:pre">
+      <tspan x="25" y="56" fill="rgb(0,0,0)" font-family="Poppins" font-size="32" font-weight="700" style="white-space:pre;text-transform:none" letter-spacing="2.24">LF</tspan>
+    </text>
+  </g>
+</svg>
