@@ -6,12 +6,13 @@ const SearchBar = () => {
     const { getSong, searchQuery, setSearchQuery } = useContext(SongContext)
 
     return (
-        <form className="search-bar" onSubmit={getSong}>
+        <form className="search-bar" onSubmit={getSong} autoComplete="off">
             <input type="text"
              placeholder="What song is on your mind?" 
              name="search"
              value={searchQuery}
-             onChange={(e) => setSearchQuery(e.target.value)} />
+             onChange={(e) => setSearchQuery(e.target.value)}
+             autoComplete='off' />
             <PrimaryBtn text="Find Song" />
         </form>
     )

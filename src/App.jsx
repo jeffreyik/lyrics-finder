@@ -15,7 +15,7 @@ function App() {
       'X-RapidAPI-Key': import.meta.env.VITE_APP_API_KEY,
       'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
     }
-  }) // Remember to hide API Key
+  })
   const [songs, setSongs] = useState({
     loading: false,
     songData: [],
@@ -52,7 +52,7 @@ const getSong = async (e) => {
       loading: false
     })
   }
-  console.log(songs.songData)
+  // console.log(songs.songData)
 }
 
 const getSongLyric = async (id) => {
